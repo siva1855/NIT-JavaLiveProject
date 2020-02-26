@@ -19,7 +19,7 @@ import siva.nit.view.excel.ShipmentTypeExcelView;
 import siva.nit.view.pdf.ShipmentTypePdfView;
 
 @Controller
-@RequestMapping("/shipment")
+@RequestMapping("/shipmenttype")
 public class ShipmentTypeController {
 
 	@Autowired
