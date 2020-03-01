@@ -9,7 +9,8 @@
 </head>
 <body>
 	<h2>Welcome to Uom Data Page</h2>
-	<a href="excel">Excel Export</a> | <a href="pdf">Pdf Export</a>
+	<a href="excel"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
+	 <a href="pdf"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
 	<c:choose>
 		<c:when test="${!empty listUomData}">
 			<table border="1">
@@ -27,9 +28,9 @@
 						<td>${uomObj.uomModel }</td>
 						<td>${uomObj.uomDescription }</td>
 						<!-- URL-ReWritting -->
-						<td><a href="delete?uid=${uomObj.uomId }">DELETE</a></td>
-						<td><a href="edit?uid=${uomObj.uomId }">Edit</a></td>
-						<td><a href="view?uid=${uomObj.uomId }">View</a></td>
+						<td><a href="delete?uid=${uomObj.uomId }"><img src="../resources/images/Delete.jpg" width="40" height="30"></a></td>
+						<td><a href="edit?uid=${uomObj.uomId }"><img src="../resources/images/Edit.jpg" width="40" height="30"></a></td>
+						<td><a href="view?uid=${uomObj.uomId }"><img src="../resources/images/Search.png" width="40" height="30"></a></td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import siva.nit.dao.OrderMethodDao;
 import siva.nit.model.OrderMethod;
-import siva.nit.model.ShipmentType;
+
 import siva.nit.service.OrderMethodService;
 
 @Service

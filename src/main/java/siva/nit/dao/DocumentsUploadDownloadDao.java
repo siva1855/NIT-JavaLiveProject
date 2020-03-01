@@ -6,7 +6,7 @@ import siva.nit.model.DocumentsUploadDownload;
 
 public interface DocumentsUploadDownloadDao {
 
-	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUpload);
+	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUploadDownload);
 	
 	public List<Object[]> getFileIdAndNames();
 	

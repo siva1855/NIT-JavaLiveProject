@@ -17,9 +17,9 @@ public class DocumentsUploadDownloadServiceImpl implements DocumentsUploadDownlo
 	private DocumentsUploadDownloadDao documentsUploadDownloadDao;
 
 	@Transactional
-	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUpload) {
+	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUploadDownload) {
 
-		return documentsUploadDownloadDao.saveDocumentsUploadDownload(documentsUpload);
+		return documentsUploadDownloadDao.saveDocumentsUploadDownload(documentsUploadDownload);
 	}
 
 	@Transactional(readOnly = true)

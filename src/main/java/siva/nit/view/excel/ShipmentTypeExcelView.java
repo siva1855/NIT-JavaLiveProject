@@ -26,7 +26,6 @@ public class ShipmentTypeExcelView extends AbstractXlsxView {
 		setHeader(sheet);
 		
 		// read model data
-		
 		@SuppressWarnings("unchecked")
 		List<ShipmentType> list = (List<ShipmentType>) model.get("showShipmentTypeExcelData");
 		setBody(sheet, list);
@@ -44,7 +43,7 @@ public class ShipmentTypeExcelView extends AbstractXlsxView {
 
 	}
 
-	// it will print row number ---1 on words (Cells)
+	// it will print row number ---1 on words (Body--Cells)
 	private void setBody(Sheet sheet, List<ShipmentType> list) {
 		int count = 1;
 		for (ShipmentType shipmentType : list) {

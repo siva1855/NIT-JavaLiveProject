@@ -5,6 +5,8 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import siva.nit.model.ShipmentType;
 import siva.nit.service.ShipmentTypeService;
+import siva.nit.util.ShipmentTypeChartsUtil;
 import siva.nit.view.excel.ShipmentTypeExcelView;
 import siva.nit.view.pdf.ShipmentTypePdfView;
 
@@ -24,6 +27,10 @@ public class ShipmentTypeController {
 
 	@Autowired
 	private ShipmentTypeService shipmentTypeService;
+	@Autowired
+	private ServletContext servletContext;
+	@Autowired
+	private ShipmentTypeChartsUtil shipmentTypeChartsUtil;
 
 	// 1.Register Page
 	@RequestMapping("/register")
@@ -126,4 +133,14 @@ public class ShipmentTypeController {
 		}
 		return modelAndView;
 	}
+	//9.JFreeCharts(PieChart,BarChart)
+	@RequestMapping("/charts")
+	public String showCharts() {
+		List<Object[]> list=shipmentTypeService.getShipmentTypeModeCount();
+		String path=servletContext.getRealPath("/");
+		shipmentTypeChartsUtil.generatePieChart(path, list);
+		shipmentTypeChartsUtil.generateBarChart(path, list);
+		return "ShipmentTypeCharts";
+	}
+	
 }

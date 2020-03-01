@@ -37,11 +37,11 @@ public class DocumentsUploadDownloadController {
 	public String doUpload(@RequestParam Integer fileId, @RequestParam CommonsMultipartFile fileObject) {
 
 		if (fileObject != null) {
-			DocumentsUploadDownload documentsUpload = new DocumentsUploadDownload();
-			documentsUpload.setFileId(fileId);
-			documentsUpload.setFileName(fileObject.getOriginalFilename());
-			documentsUpload.setFileData(fileObject.getBytes());
-			documentsUploadDownloadService.saveDocumentsUploadDownload(documentsUpload);
+			DocumentsUploadDownload documentsUploadDownload = new DocumentsUploadDownload();
+			documentsUploadDownload.setFileId(fileId);
+			documentsUploadDownload.setFileName(fileObject.getOriginalFilename());
+			documentsUploadDownload.setFileData(fileObject.getBytes());
+			documentsUploadDownloadService.saveDocumentsUploadDownload(documentsUploadDownload);
 		}
 		return "redirect:show";
 	}

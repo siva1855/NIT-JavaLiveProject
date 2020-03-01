@@ -15,9 +15,9 @@ public class DocumentsUploadDownloadDaoImpl implements DocumentsUploadDownloadDa
 	@Autowired
 	private HibernateTemplate hibernateTemplate;
 
-	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUpload) {
+	public Integer saveDocumentsUploadDownload(DocumentsUploadDownload documentsUploadDownload) {
 
-		return (Integer) hibernateTemplate.save(documentsUpload);
+		return (Integer) hibernateTemplate.save(documentsUploadDownload);
 	}
 
 	@SuppressWarnings("unchecked")

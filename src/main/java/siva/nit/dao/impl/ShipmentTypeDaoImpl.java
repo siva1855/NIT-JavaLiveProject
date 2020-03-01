@@ -15,7 +15,6 @@ public class ShipmentTypeDaoImpl implements ShipmentTypeDao {
 	@Autowired
 	private HibernateTemplate hibernateTemplate;
 
-	
 	public Integer saveShipmentType(ShipmentType shipmentType) {
 		Integer id = (Integer) hibernateTemplate.save(shipmentType);
 		return id;
@@ -35,5 +34,11 @@ public class ShipmentTypeDaoImpl implements ShipmentTypeDao {
 
 	public void updateShipmentType(ShipmentType shipmentType) {
 		hibernateTemplate.update(shipmentType);
+	}
+
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Object[]> getShipmentTypeModeCount() {
+		String hql = "select shipmentMode,count(shipmentMode) from siva.nit.model.ShipmentType group by shipmentMode";
+		return (List<Object[]>) hibernateTemplate.find(hql);
 	}
 }

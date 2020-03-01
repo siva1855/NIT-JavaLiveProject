@@ -11,7 +11,10 @@
 </head>
 <body>
 	<h2>Welcome To ShipmentType Data Page</h2>
-     <a href="excel">Excel Export</a> | <a href="pdf">Pdf Export</a>
+ 
+      <a href="excel"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
+       <a href="pdf"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
+    
 	<c:choose>
 		<c:when test="${!empty listData }">
 			<table border="1">
@@ -33,9 +36,9 @@
 						<td>${ob.shipmentGrade }</td>
 						<td>${ob.shipmentDescr }</td>
 						<!-- URL-ReWritting -->
-						<td><a href="delete?sid=${ob.shipmentTypeId }">Delete</a></td>
-						<td><a href="edit?sid=${ob.shipmentTypeId }">Edit</a></td>
-						<td><a href="view?sid=${ob.shipmentTypeId }">View</a></td>
+						<td><a href="delete?sid=${ob.shipmentTypeId }"><img src="../resources/images/Delete.jpg" width="40" height="30"></a></td>
+						<td><a href="edit?sid=${ob.shipmentTypeId }"><img src="../resources/images/Edit.jpg" width="40" height="30"></a></td>
+						<td><a href="view?sid=${ob.shipmentTypeId }"><img src="../resources/images/Search.png" width="40" height="30"></a></td>
 						
 					</tr>
 				</c:forEach>

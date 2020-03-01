@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>DocumentsUpload</title>
+<title>DocumentsUploadDownload</title>
 </head>
 <body>
-	<h2>Welcome To Documents Upload Page</h2>
+	<h2>Welcome To DocumentsUploadDownload Page</h2>
 	<form action="upload" method="post" enctype="multipart/form-data">
 		<pre>
            Document ID:<input type="text" name="fileId" />

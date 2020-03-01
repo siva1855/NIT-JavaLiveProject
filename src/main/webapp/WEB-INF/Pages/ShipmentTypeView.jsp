@@ -12,8 +12,8 @@
 	<h2>Welcome To Shipment Type View Page</h2>
 	
 	<!-- URL Re-writting -->
-	<a href="excel?id=${showOneShipmentTypeData.shipmentTypeId}">Excel Export</a> |
-	<a href="pdf?id=${showOneShipmentTypeData.shipmentTypeId}">Pdf Export</a>
+	<a href="excel?id=${showOneShipmentTypeData.shipmentTypeId}"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
+	<a href="pdf?id=${showOneShipmentTypeData.shipmentTypeId}"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
 		
 	<table border="1">
 		<tr>

@@ -11,8 +11,8 @@
 <h2>Welcome To Uom View Page</h2>
 	
 	<!-- URL Re-writting -->
-	<a href="excel?id=${showOneUomData.uomId}">Excel Export</a> |
-	<a href="pdf?id=${showOneUomData.uomId}">Pdf Export</a>
+	<a href="excel?id=${showOneUomData.uomId}"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
+	<a href="pdf?id=${showOneUomData.uomId}"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
 		
 	<table border="1">
 		<tr>
