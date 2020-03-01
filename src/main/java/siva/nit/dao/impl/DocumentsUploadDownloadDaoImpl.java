@@ -20,7 +20,7 @@ public class DocumentsUploadDownloadDaoImpl implements DocumentsUploadDownloadDa
 		return (Integer) hibernateTemplate.save(documentsUploadDownload);
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	public List<Object[]> getFileIdAndNames() {
 		String hql = "select fileId,fileName from siva.nit.model.DocumentsUploadDownload";
 		return (List<Object[]>) hibernateTemplate.find(hql);

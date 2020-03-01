@@ -10,8 +10,12 @@ import org.springframework.web.servlet.ModelAndView;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.servlet.ServletContext;
+
 import siva.nit.model.Uom;
 import siva.nit.service.UomService;
+import siva.nit.util.UomChartsUtil;
 import siva.nit.view.excel.UomExcelView;
 import siva.nit.view.pdf.UomPdfView;
 
@@ -21,7 +25,12 @@ public class UomController {
 
 	@Autowired
 	private UomService uomService;
-
+	@Autowired
+	private ServletContext servletContext;
+	@Autowired
+	private UomChartsUtil uomChartsUtil;
+	
+	
 	// 1.Register Page
 	@RequestMapping("/register")
 	public String showUomRegisterPage(Model model) {
@@ -127,4 +136,14 @@ public class UomController {
 		}
 		return modelAndView;
 	}
+	
+	//10.JFreeCharts(PieChart,BarChart)
+		@RequestMapping("/charts")
+		public String showCharts() {
+			List<Object[]> list=uomService.getUomTypeCount();
+			String path=servletContext.getRealPath("/");
+			uomChartsUtil.generatePieChart(path, list);
+			uomChartsUtil.generateBarChart(path, list);
+			return "UomCharts";
+		}
 }

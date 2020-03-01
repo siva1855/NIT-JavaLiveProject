@@ -41,4 +41,9 @@ public class UomDaoImpl implements UomDao {
 	public void updateUom(Uom uom) {
 		hibernateTemplate.update(uom);
 	}
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Object[]> getUomTypeCount() {
+		String hql="select uomType,count(uomType) from siva.nit.model.Uom group by uomType";
+		return (List<Object[]>) hibernateTemplate.find(hql);
+	}
 }

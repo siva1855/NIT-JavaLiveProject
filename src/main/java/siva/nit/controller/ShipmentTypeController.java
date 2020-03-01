@@ -133,7 +133,8 @@ public class ShipmentTypeController {
 		}
 		return modelAndView;
 	}
-	//9.JFreeCharts(PieChart,BarChart)
+	
+	//10.JFreeCharts(PieChart,BarChart)
 	@RequestMapping("/charts")
 	public String showCharts() {
 		List<Object[]> list=shipmentTypeService.getShipmentTypeModeCount();
