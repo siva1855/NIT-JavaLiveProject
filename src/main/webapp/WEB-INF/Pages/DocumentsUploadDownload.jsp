@@ -13,7 +13,7 @@
 		<pre>
            Document ID:<input type="text" name="fileId" />
            Choose Document: <input type="file" name="fileObject" />
-                  <input type="submit" value="Upload" />
+           <input type="image" src="../resources/images/Upload.jpg" width="125" height="75" alt="Submit"/>
 	  </pre>
 	</form>
 	<table border="1">
@@ -26,7 +26,7 @@
 			<tr>
 				<td>${obj[0] }</td>
 				<td>${obj[1] }</td>
-				<td><a href="download?fid=${obj[0]}">Download</a></td>
+				<td><a href="download?fid=${obj[0]}"><img src="../resources/images/Download.gif" width="115" height="35"></a></td>
 			</tr>
 		</c:forEach>
 	</table>

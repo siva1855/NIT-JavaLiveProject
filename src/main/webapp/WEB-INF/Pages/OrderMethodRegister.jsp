@@ -8,8 +8,8 @@
 <title>OrderMethod</title>
 </head>
 <body>
-	<h2>Welcome to Order Method Register Page</h2>
-	<form:form action="save" method="POST" modelAttribute="orderMethod">
+	<h2>Welcome to OrderMethod Register Page</h2>
+	<form:form action="save" method="post" modelAttribute="orderMethod">
 		<pre>
            Order Mode:<form:radiobutton path="orderMethodMode" value="Sale" />Sale
                       <form:radiobutton path="orderMethodMode" value="Purchase" />Purchase
@@ -22,7 +22,7 @@
 				            <form:option value="FEFO">FEFO</form:option>
 			            </form:select>
             Order Accept:<form:checkbox path="orderMethodAccept" value="Multi-Model" />Multi-Model
-                        <form:checkbox path="orderMethodAccept" value="Accept Return" />Accept Return
+                        <form:checkbox path="orderMethodAccept" value="Accept-Return" />Accept-Return
             Description:<form:textarea path="orderMethodDescription"></form:textarea>
                       <input type="submit" value="Create Order Method" />
        </pre>

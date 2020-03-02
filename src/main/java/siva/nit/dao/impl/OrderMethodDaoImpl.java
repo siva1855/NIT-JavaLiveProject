@@ -22,4 +22,23 @@ public class OrderMethodDaoImpl implements OrderMethodDao {
 	public List<OrderMethod> getAllOrderMethods() {
 		return hibernateTemplate.loadAll(OrderMethod.class);
 	}
+
+	public void delectOrderMarhod(Integer id) {
+		hibernateTemplate.delete(new OrderMethod(id));
+	}
+
+	public OrderMethod getOneOrderMethod(Integer id) {
+		return hibernateTemplate.get(OrderMethod.class, id);
+	}
+
+	public void updateOrderMethod(OrderMethod orderMethod) {
+		hibernateTemplate.update(orderMethod);
+	}
+
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Object[]> getOrderMethodTypeCount() {
+		String hql = "select orderMethodType,count(orderMethodType) from siva.nit.model.OrderMethod group by orderMethodType";
+		return (List<Object[]>) hibernateTemplate.find(hql);
+	}
+
 }

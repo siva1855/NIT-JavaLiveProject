@@ -28,4 +28,25 @@ public class OrderMethodServiceImpl implements OrderMethodService {
 		Collections.sort(orderMethodList, (o1, o2) -> o1.getOrderMethodId() - o2.getOrderMethodId());
 		return orderMethodList;
 	}
+
+	@Transactional
+	public void delectOrderMarhod(Integer id) {
+		orderMethodDao.delectOrderMarhod(id);
+	}
+
+	@Transactional(readOnly = true)
+	public OrderMethod getOneOrderMethod(Integer id) {
+		return orderMethodDao.getOneOrderMethod(id);
+	}
+
+	@Transactional
+	public void updateOrderMethod(OrderMethod orderMethod) {
+		orderMethodDao.updateOrderMethod(orderMethod);
+	}
+
+	@Transactional(readOnly = true)
+	public List<Object[]> getOrderMethodTypeCount() {
+		return orderMethodDao.getOrderMethodTypeCount();
+	}
+
 }

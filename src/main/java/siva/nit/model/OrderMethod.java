@@ -48,6 +48,12 @@ public class OrderMethod {
 	}
 
 	
+	public OrderMethod(Integer orderMethodId) {
+		super();
+		this.orderMethodId = orderMethodId;
+	}
+
+
 	public Integer getOrderMethodId() {
 		return orderMethodId;
 	}
