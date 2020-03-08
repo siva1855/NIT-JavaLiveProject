@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
  <title>ShipmentType</title>
 </head>
 <body>
-	<h2>Welcome to Shipment Type Register Page</h2>
+	<h2>Welcome to ShipmentType Register Page</h2>
 	<form:form action="save" method="POST" modelAttribute="shipmentType">
 		<pre>
            Shipment Mode:<form:select path="shipmentMode">

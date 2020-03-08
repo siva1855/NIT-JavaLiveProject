@@ -48,6 +48,7 @@ public class ShipmentTypeChartsUtil {
 		//3.save as Image Using ChartUtil
 		try {
 			ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/ShipmentTypeBarChart.jpg"), jFreeChart, 400, 400);
+			//System.out.println(path);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
