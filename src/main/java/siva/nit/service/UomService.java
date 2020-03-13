@@ -17,4 +17,6 @@ public interface UomService {
 	public void updateUom(Uom uom);
 
 	public List<Object[]> getUomTypeCount();
+	
+	public List<Object[]> getUomIdAndUomModel();
 }

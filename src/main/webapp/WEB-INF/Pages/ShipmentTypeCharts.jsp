@@ -7,6 +7,7 @@
 <title>ShipmentType</title>
 </head>
 <body>
+<%@include file="ClientMenu.jsp"%>
 	<h2>Welcome To ShipmentType Chart Page</h2>
 	<img src="../resources/images/ShipmentTypePieChart.jpg" />
 	<img src="../resources/images/ShipmentTypeBarChart.jpg" />

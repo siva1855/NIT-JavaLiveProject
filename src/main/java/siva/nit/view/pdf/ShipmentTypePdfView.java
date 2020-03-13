@@ -25,7 +25,7 @@ public class ShipmentTypePdfView extends AbstractPdfView {
 		response.addHeader("Content-Disposition", "attachment;filename=ShipmentTypePdfData.pdf");
 		
 		// create element
-		Paragraph paragraph = new Paragraph("Welcome To Shipment Type");
+		Paragraph paragraph = new Paragraph("Welcome To ShipmentType");
 		
 		// add element to document
 		document.add(paragraph);
@@ -46,11 +46,11 @@ public class ShipmentTypePdfView extends AbstractPdfView {
 		// adding data to table
 		for (ShipmentType shipmentType : list) {
 			pdfPTable.addCell(shipmentType.getShipmentTypeId().toString());
-			pdfPTable.addCell(shipmentType.getShipmentMode());
-			pdfPTable.addCell(shipmentType.getShipmentCode());
-			pdfPTable.addCell(shipmentType.getShipmentEnable());
-			pdfPTable.addCell(shipmentType.getShipmentGrade());
-			pdfPTable.addCell(shipmentType.getShipmentDescr());
+			pdfPTable.addCell(shipmentType.getShipmentTypeMode());
+			pdfPTable.addCell(shipmentType.getShipmentTypeCode());
+			pdfPTable.addCell(shipmentType.getShipmentTypeEnable());
+			pdfPTable.addCell(shipmentType.getShipmentTypeGrade());
+			pdfPTable.addCell(shipmentType.getShipmentTypeDescription());
 		}
 		// add table to document
 		document.add(pdfPTable);

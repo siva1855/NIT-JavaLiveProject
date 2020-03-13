@@ -14,27 +14,23 @@ public class ShipmentType {
 	@Column(name = "shipmenttype_id")
 	private Integer shipmentTypeId;
 
-	@Column(name = "shipment_mode")
-	private String shipmentMode;
+	@Column(name = "shipmenttype_mode")
+	private String shipmentTypeMode;
 
-	@Column(name = "shipment_code")
-	private String shipmentCode;
+	@Column(name = "shipmenttype_code")
+	private String shipmentTypeCode;
 
-	@Column(name = "shipment_enable")
-	private String shipmentEnable;
+	@Column(name = "shipmenttype_enable")
+	private String shipmentTypeEnable;
 
-	@Column(name = "shipment_grade")
-	private String shipmentGrade;
+	@Column(name = "shipmenttype_grade")
+	private String shipmentTypeGrade;
 
-	@Column(name = "shipment_descr")
-	private String shipmentDescr;
+	@Column(name = "shipmenttype_description")
+	private String shipmentTypeDescription;
 
 	public ShipmentType() {
 		super();
-	}
-
-	public Integer getShipmentTypeId() {
-		return shipmentTypeId;
 	}
 
 	public ShipmentType(Integer shipmentTypeId) {
@@ -42,55 +38,60 @@ public class ShipmentType {
 		this.shipmentTypeId = shipmentTypeId;
 	}
 
+	public Integer getShipmentTypeId() {
+		return shipmentTypeId;
+	}
+
 	public void setShipmentTypeId(Integer shipmentTypeId) {
 		this.shipmentTypeId = shipmentTypeId;
 	}
 
-	public String getShipmentMode() {
-		return shipmentMode;
+	public String getShipmentTypeMode() {
+		return shipmentTypeMode;
 	}
 
-	public void setShipmentMode(String shipmentMode) {
-		this.shipmentMode = shipmentMode;
+	public void setShipmentTypeMode(String shipmentTypeMode) {
+		this.shipmentTypeMode = shipmentTypeMode;
 	}
 
-	public String getShipmentCode() {
-		return shipmentCode;
+	public String getShipmentTypeCode() {
+		return shipmentTypeCode;
 	}
 
-	public void setShipmentCode(String shipmentCode) {
-		this.shipmentCode = shipmentCode;
+	public void setShipmentTypeCode(String shipmentTypeCode) {
+		this.shipmentTypeCode = shipmentTypeCode;
 	}
 
-	public String getShipmentEnable() {
-		return shipmentEnable;
+	public String getShipmentTypeEnable() {
+		return shipmentTypeEnable;
 	}
 
-	public void setShipmentEnable(String shipmentEnable) {
-		this.shipmentEnable = shipmentEnable;
+	public void setShipmentTypeEnable(String shipmentTypeEnable) {
+		this.shipmentTypeEnable = shipmentTypeEnable;
 	}
 
-	public String getShipmentGrade() {
-		return shipmentGrade;
+	public String getShipmentTypeGrade() {
+		return shipmentTypeGrade;
 	}
 
-	public void setShipmentGrade(String shipmentGrade) {
-		this.shipmentGrade = shipmentGrade;
+	public void setShipmentTypeGrade(String shipmentTypeGrade) {
+		this.shipmentTypeGrade = shipmentTypeGrade;
 	}
 
-	public String getShipmentDescr() {
-		return shipmentDescr;
+	public String getShipmentTypeDescription() {
+		return shipmentTypeDescription;
 	}
 
-	public void setShipmentDescr(String shipmentDescr) {
-		this.shipmentDescr = shipmentDescr;
+	public void setShipmentTypeDescription(String shipmentTypeDescription) {
+		this.shipmentTypeDescription = shipmentTypeDescription;
 	}
 
 	@Override
 	public String toString() {
-		return "ShipmentType [shipmentTypeId=" + shipmentTypeId + ", shipmentMode=" + shipmentMode + ", shipmentCode="
-				+ shipmentCode + ", shipmentEnable=" + shipmentEnable + ", shipmentGrade=" + shipmentGrade
-				+ ", shipmentDescr=" + shipmentDescr + "]";
+		return "ShipmentType [shipmentTypeId=" + shipmentTypeId + ", shipmentTypeMode=" + shipmentTypeMode
+				+ ", shipmentTypeCode=" + shipmentTypeCode + ", shipmentTypeEnable=" + shipmentTypeEnable
+				+ ", shipmentTypeGrade=" + shipmentTypeGrade + ", shipmentTypeDescription=" + shipmentTypeDescription
+				+ "]";
 	}
 
 }

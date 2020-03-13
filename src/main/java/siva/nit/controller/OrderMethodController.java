@@ -60,10 +60,10 @@ public class OrderMethodController {
 	
 	// 4.delete method------DB(delete)
 		@RequestMapping("/delete")
-		public String deleteOrderMethodData(@RequestParam("oid") Integer id, Model model) {
+		public String deleteOrderMethodObject(@RequestParam("oid") Integer id, Model model) {
 			orderMethodService.delectOrderMarhod(id);
 			String message = "OrderMethod '" + id + "' is deleted";
-			model.addAttribute("messageData", message);
+			model.addAttribute("deleteOrderMethodObjectData", message);
 			// fetch new Data
 			List<OrderMethod> list = orderMethodService.getAllOrderMethods();
 			model.addAttribute("fetchAllOrderMethodsData", list);
@@ -83,7 +83,7 @@ public class OrderMethodController {
 		public String updateOrderMethodObject(@ModelAttribute OrderMethod orderMethod , Model model) {
 			orderMethodService.updateOrderMethod(orderMethod);
 			String message = "OrderMethod '" + orderMethod.getOrderMethodId() + "' Updated";
-			model.addAttribute("updateMessage", message);
+			model.addAttribute("updateOrderMethodObjectData", message);
 			List<OrderMethod> list = orderMethodService.getAllOrderMethods();
 			model.addAttribute("fetchAllOrderMethodsData", list);
 			return "OrderMethodData";

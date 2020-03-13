@@ -41,4 +41,11 @@ public class OrderMethodDaoImpl implements OrderMethodDao {
 		return (List<Object[]>) hibernateTemplate.find(hql);
 	}
 
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	public List<Object[]> getOrderMethodIdAndOrderMethodCode(String orderMethodMode) {
+		String hql = " select orderMethodId,orderMethodCode from " + OrderMethod.class.getName()
+				+ " where orderMethodMode=?0";
+		List<Object[]> list = (List<Object[]>) hibernateTemplate.find(hql, orderMethodMode);
+		return list;
+	}
 }

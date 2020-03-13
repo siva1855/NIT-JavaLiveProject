@@ -8,45 +8,64 @@
 <title>ShipmentType</title>
 </head>
 <body>
-	<h2>Welcome To ShipmentType Data Page</h2>
- 
-      <a href="excel"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
-       <a href="pdf"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
-    
-	<c:choose>
-		<c:when test="${!empty listData }">
-			<table border="1">
-				<tr>
-					<th>Shipment ID</th>
-					<th>Shipment Mode</th>
-					<th>Shipment Code</th>
-					<th>Shipment Enable</th>
-					<th>Shipment Grade</th>
-					<th>Description</th>
-					<th colspan="3">Operations</th>
-				</tr>
-				<c:forEach items="${listData }" var="ob">
-					<tr>
-						<td>${ob.shipmentTypeId }</td>
-						<td>${ob.shipmentMode }</td>
-						<td>${ob.shipmentCode }</td>
-						<td>${ob.shipmentEnable }</td>
-						<td>${ob.shipmentGrade }</td>
-						<td>${ob.shipmentDescr }</td>
-						<!-- URL-ReWritting -->
-						<td><a href="delete?sid=${ob.shipmentTypeId }"><img src="../resources/images/Delete.jpg" width="40" height="30"></a></td>
-						<td><a href="edit?sid=${ob.shipmentTypeId }"><img src="../resources/images/Edit.jpg" width="40" height="30"></a></td>
-						<td><a href="view?sid=${ob.shipmentTypeId }"><img src="../resources/images/Search.png" width="40" height="30"></a></td>
-						
-					</tr>
-				</c:forEach>
-			</table>
+	<%@include file="ClientMenu.jsp"%>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<h2>Welcome To ShipmentType Data Page</h2>
+			</div>
+			<div class="card-body">
+				<a href="excel" class="btn btn-secondary">EXCEL EXPORT</a> <a
+					href="pdf" class="btn btn-secondary">PDF EXPORT</a>
 
-		</c:when>
-		<c:otherwise>
-			<h2>No Data Found!!!</h2>
-		</c:otherwise>
-	</c:choose>
-	${messageData} ${updateMessage}
+				<c:choose>
+					<c:when test="${!empty fetchAllShipmentTypesData }">
+						<table class="table table-hover">
+							<tr class="bg-success text-white">
+								<th>Shipment ID</th>
+								<th>Shipment Mode</th>
+								<th>Shipment Code</th>
+								<th>Shipment Enable</th>
+								<th>Shipment Grade</th>
+								<th>Description</th>
+								<th colspan="3">Operations</th>
+							</tr>
+							<c:forEach items="${fetchAllShipmentTypesData }" var="ob">
+								<tr>
+									<td>${ob.shipmentTypeId }</td>
+									<td>${ob.shipmentTypeMode }</td>
+									<td>${ob.shipmentTypeCode }</td>
+									<td>${ob.shipmentTypeEnable }</td>
+									<td>${ob.shipmentTypeGrade }</td>
+									<td>${ob.shipmentTypeDescription }</td>
+									<!-- URL-ReWritting -->
+									<td><a href="delete?sid=${ob.shipmentTypeId }"
+										class="btn btn-danger">DELETE</a></td>
+									<td><a href="edit?sid=${ob.shipmentTypeId }"
+										class="btn btn-info">EDIT</a></td>
+									<td><a href="view?sid=${ob.shipmentTypeId }"
+										class="btn btn-warning">VIEW</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+
+					</c:when>
+					<c:otherwise>
+						<h2>No Data Found!!!</h2>
+					</c:otherwise>
+				</c:choose>
+				
+				${deleteShipmentTypeObjectData} ${updateShipmentTypeObjectData}
+				
+			</div>
+			<!-- card body -->
+
+		</div><!-- card end -->
+		
+	</div>
+	<!-- container end -->
 </body>
 </html>
+
+
+

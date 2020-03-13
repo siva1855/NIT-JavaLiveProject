@@ -9,37 +9,40 @@
 <title>ShipmentType</title>
 </head>
 <body>
-	<h2>Welcome To Shipment Type View Page</h2>
+	<%@include file="ClientMenu.jsp"%>
 	
-	<!-- URL Re-writting -->
-	<a href="excel?id=${showOneShipmentTypeData.shipmentTypeId}"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
-	<a href="pdf?id=${showOneShipmentTypeData.shipmentTypeId}"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
-		
-	<table border="1">
-		<tr>
-			<th>Shipment ID</th>
-			<td>${showOneShipmentTypeData.shipmentTypeId}</td>
-		</tr>
-		<tr>
-			<th>Shipment Mode</th>
-			<td>${showOneShipmentTypeData.shipmentMode}</td>
-		</tr>
-		<tr>
-			<th>Shipment Code</th>
-			<td>${showOneShipmentTypeData.shipmentCode}</td>
-		</tr>
-		<tr>
-			<th>Shipment Enable</th>
-			<td>${showOneShipmentTypeData.shipmentEnable}</td>
-		</tr>
-		<tr>
-			<th>Shipment Grade</th>
-			<td>${showOneShipmentTypeData.shipmentGrade}</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>${showOneShipmentTypeData.shipmentDescr}</td>
-		</tr>
-	</table>
-</body>
+			<h2>Welcome To ShipmentType View Page</h2>
+		<!-- URL Re-writting -->
+		<a href="excel?id=${showOneShipmentTypeObjectData.shipmentTypeId}"><img
+			src="../resources/images/Excel.png" width="115" height="35"></a>
+		<a href="pdf?id=${showOneShipmentTypeObjectData.shipmentTypeId}"><img
+			src="../resources/images/Pdf.jpg" width="115" height="35"></a>
+
+		<table border="1" >
+			<tr >
+				<th>Shipment ID</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeId}</td>
+			</tr>
+			<tr >
+				<th>Shipment Mode</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeMode}</td>
+			</tr>
+			<tr >
+				<th>Shipment Code</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeCode}</td>
+			</tr>
+			<tr >
+				<th>Shipment Enable</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeEnable}</td>
+			</tr>
+			<tr >
+				<th>Shipment Grade</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeGrade}</td>
+			</tr>
+			<tr >
+				<th>Description</th>
+				<td>${showOneShipmentTypeObjectData.shipmentTypeDescription}</td>
+			</tr>
+		</table>
+		</body>
 </html>

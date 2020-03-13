@@ -38,7 +38,7 @@ public class ShipmentTypeDaoImpl implements ShipmentTypeDao {
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
 	public List<Object[]> getShipmentTypeModeCount() {
-		String hql = "select shipmentMode,count(shipmentMode) from siva.nit.model.ShipmentType group by shipmentMode";
+		String hql = "select shipmentTypeMode,count(shipmentTypeMode) from siva.nit.model.ShipmentType group by shipmentTypeMode";
 		return (List<Object[]>) hibernateTemplate.find(hql);
 	}
 }

@@ -49,11 +49,11 @@ public class ShipmentTypeExcelView extends AbstractXlsxView {
 		for (ShipmentType shipmentType : list) {
 			Row row = sheet.createRow(count++);
 			row.createCell(0).setCellValue(shipmentType.getShipmentTypeId());
-			row.createCell(1).setCellValue(shipmentType.getShipmentMode());
-			row.createCell(2).setCellValue(shipmentType.getShipmentCode());
-			row.createCell(3).setCellValue(shipmentType.getShipmentEnable());
-			row.createCell(4).setCellValue(shipmentType.getShipmentGrade());
-			row.createCell(5).setCellValue(shipmentType.getShipmentDescr());
+			row.createCell(1).setCellValue(shipmentType.getShipmentTypeMode());
+			row.createCell(2).setCellValue(shipmentType.getShipmentTypeCode());
+			row.createCell(3).setCellValue(shipmentType.getShipmentTypeEnable());
+			row.createCell(4).setCellValue(shipmentType.getShipmentTypeGrade());
+			row.createCell(5).setCellValue(shipmentType.getShipmentTypeDescription());
 		}
 
 	}

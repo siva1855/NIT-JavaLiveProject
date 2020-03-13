@@ -9,7 +9,9 @@
 </head>
 <body>
 <h2>Welcome To Shipment Type View Page</h2>
-<a href="excel?id=${showOneOrderMethodData.orderMethodId}"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
+<%@include file="ClientMenu.jsp"%>
+<a href="excel?id=${showOneOrderMethodData.orderMethodId}">Excel Export</a>
+<%-- <a href="excel?id=${showOneOrderMethodData.orderMethodId}"><img src="../resources/images/Excel.png" width="115" height="35"></a>  --%>
 <a href="pdf?id=${showOneOrderMethodData.orderMethodId}"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
 <table border="1">
 		<tr>

@@ -43,7 +43,7 @@ public class UomController {
 	public String saveUomRegister(@ModelAttribute Uom uom, Model model) {
 		Integer id = uomService.saveUom(uom);
 		String message = "UomRegister '" + id + "'saved";
-		model.addAttribute("UomMessage", message);
+		model.addAttribute("saveUomRegisterData", message);
 		model.addAttribute("uom", new Uom());
 
 		return "UomRegister";
@@ -63,7 +63,7 @@ public class UomController {
 	public String deleteOneUom(@RequestParam("uid") Integer id, Model model) {
 		uomService.deleteUom(id);
 		String message = "Uom '" + id + "' is Deleted";
-		model.addAttribute("UomMessage", message);
+		model.addAttribute("deleteOneUomData", message);
 		// fetch new Data
 		List<Uom> list = uomService.getAllUoms();
 		model.addAttribute("listUomData", list);
@@ -86,7 +86,7 @@ public class UomController {
 	public String updateUomObject(@ModelAttribute Uom uom, Model model) {
 		uomService.updateUom(uom);
 		String message = "Uom '" + uom.getUomId() + "' Updated";
-		model.addAttribute("updateMessage", message);
+		model.addAttribute("updateUomObjectData", message);
 		List<Uom> list = uomService.getAllUoms();
 		model.addAttribute("listUomData", list);
 		return "UomData";

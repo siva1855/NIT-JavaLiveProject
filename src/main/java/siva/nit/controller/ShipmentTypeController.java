@@ -1,12 +1,9 @@
 package siva.nit.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
 import java.util.Arrays;
 import java.util.List;
-
 import javax.servlet.ServletContext;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +17,7 @@ import siva.nit.service.ShipmentTypeService;
 import siva.nit.util.ShipmentTypeChartsUtil;
 import siva.nit.view.excel.ShipmentTypeExcelView;
 import siva.nit.view.pdf.ShipmentTypePdfView;
+
 
 @Controller
 @RequestMapping("/shipmenttype")
@@ -45,7 +43,7 @@ public class ShipmentTypeController {
 
 		Integer id = shipmentTypeService.saveShipmentType(shipmentType);
 		String message = "ShipmentType :" + id + " saved";
-		model.addAttribute("shipmentMessage", message);
+		model.addAttribute("saveShipmentTypeRegisterData", message);
 		model.addAttribute("shipmentType", new ShipmentType());
 		return "ShipmentTypeRegister";
 	}
@@ -54,19 +52,19 @@ public class ShipmentTypeController {
 	@RequestMapping("/all")
 	public String fetchAllShipmentTypes(Model model) {
 		List<ShipmentType> list = shipmentTypeService.getAllShipmentTypes();
-		model.addAttribute("listData", list);
+		model.addAttribute("fetchAllShipmentTypesData", list);
 		return "ShipmentTypeData";
 	}
 
 	// 4.delete method------DB(delete)
 	@RequestMapping("/delete")
-	public String deleteShipmentTypeData(@RequestParam("sid") Integer id, Model model) {
+	public String deleteShipmentTypeObject(@RequestParam("sid") Integer id, Model model) {
 		shipmentTypeService.delectShipmentType(id);
 		String message = "ShipmentType '" + id + "' is deleted";
-		model.addAttribute("messageData", message);
+		model.addAttribute("deleteShipmentTypeObjectData", message);
 		// fetch new Data
 		List<ShipmentType> list = shipmentTypeService.getAllShipmentTypes();
-		model.addAttribute("listData", list);
+		model.addAttribute("fetchAllShipmentTypesData", list);
 		return "ShipmentTypeData";
 	}
 
@@ -83,18 +81,18 @@ public class ShipmentTypeController {
 	public String updateShipmentTypeObject(@ModelAttribute ShipmentType shipmentType, Model model) {
 		shipmentTypeService.updateShipmentType(shipmentType);
 		String message = "ShipmemtType '" + shipmentType.getShipmentTypeId() + "' Updated";
-		model.addAttribute("updateMessage", message);
+		model.addAttribute("updateShipmentTypeObjectData", message);
 		List<ShipmentType> list = shipmentTypeService.getAllShipmentTypes();
-		model.addAttribute("listData", list);
+		model.addAttribute("fetchAllShipmentTypesData", list);
 		return "ShipmentTypeData";
 	}
 
 	// 7.fetch One Record Data
 	@RequestMapping("/view")
-	public String showOneShipmentType(@RequestParam("sid") Integer id, Model model) {
+	public String showOneShipmentTypeObject(@RequestParam("sid") Integer id, Model model) {
 
 		ShipmentType shipmentType = shipmentTypeService.getOneShipmentType(id);
-		model.addAttribute("showOneShipmentTypeData", shipmentType);
+		model.addAttribute("showOneShipmentTypeObjectData", shipmentType);
 		return "ShipmentTypeView";
 	}
 

@@ -8,6 +8,7 @@
 <title>Uom</title>
 </head>
 <body>
+	<%@include file="ClientMenu.jsp"%>
 	<h2>Welcome To Uom Edit Page</h2>
 	<form:form action="update" method="post" modelAttribute="uom">
 		<pre>

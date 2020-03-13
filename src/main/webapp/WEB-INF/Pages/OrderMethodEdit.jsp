@@ -8,6 +8,7 @@
 <title>OrderMethod</title>
 </head>
 <body>
+<%@include file="ClientMenu.jsp"%>
 <h2>Welcome To OrderMethod Edit Page</h2>
 <form:form action="update" method="post" modelAttribute="orderMethod">
 		<pre>

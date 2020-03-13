@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +8,15 @@
 <title>Uom</title>
 </head>
 <body>
-<h2>Welcome To Uom View Page</h2>
-	
+	<%@include file="ClientMenu.jsp"%>
+	<h2>Welcome To Uom View Page</h2>
+
 	<!-- URL Re-writting -->
-	<a href="excel?id=${showOneUomData.uomId}"><img src="../resources/images/Excel.png" width="115" height="35"></a> |
-	<a href="pdf?id=${showOneUomData.uomId}"><img src="../resources/images/Pdf.jpg" width="115" height="35"></a>
-		
+	<a href="excel?id=${showOneUomData.uomId}"><img
+		src="../resources/images/Excel.png" width="115" height="35"></a> |
+	<a href="pdf?id=${showOneUomData.uomId}"><img
+		src="../resources/images/Pdf.jpg" width="115" height="35"></a>
+
 	<table border="1">
 		<tr>
 			<th>Uom ID</th>
