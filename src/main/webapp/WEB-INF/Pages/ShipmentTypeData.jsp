@@ -11,7 +11,8 @@
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
 		<div class="card">
-			<div class="card-header bg-primary text-white text-center">
+			<div
+				class="card-header bg-primary text-uppercase text-white text-center">
 				<h2>Welcome To ShipmentType Data Page</h2>
 			</div>
 			<div class="card-body">
@@ -54,14 +55,29 @@
 						<h2>No Data Found!!!</h2>
 					</c:otherwise>
 				</c:choose>
-				
+
 				${deleteShipmentTypeObjectData} ${updateShipmentTypeObjectData}
-				
+
+
 			</div>
 			<!-- card body -->
+			
+			<%-- <c:if test="${!empty message }">
+				<c:choose>
+					<c:when test="${opr eq 'DEL'}">
+						<div class="card-footer bg-danger text-white text-center"><b>${message }</b></div>
+					</c:when>
+					<c:otherwise>
+						<div class="card-footer bg-info text-white text-center"><b>${message }</b></div>
+					
+					</c:otherwise>
+				</c:choose>
+			</c:if> --%>
 
-		</div><!-- card end -->
-		
+
+		</div>
+		<!-- card end -->
+
 	</div>
 	<!-- container end -->
 </body>

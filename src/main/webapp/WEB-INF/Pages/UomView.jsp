@@ -9,31 +9,38 @@
 </head>
 <body>
 	<%@include file="ClientMenu.jsp"%>
-	<h2>Welcome To Uom View Page</h2>
+	<div class="container">
+		<div class="card">
+			<div
+				class="card-header bg-primary text-uppercase text-white text-center">
+				<h2>Welcome To Uom View Page</h2>
+			</div>
+			<div class="card-body">
+				<!-- URL Re-writting -->
+				<a href="excel?id=${showOneUomData.uomId}" class="btn btn-secondary">EXCEL EXPORT</a>
+			    <a href="pdf?id=${showOneUomData.uomId}" class="btn btn-secondary">PDF EXPORT</a>
 
-	<!-- URL Re-writting -->
-	<a href="excel?id=${showOneUomData.uomId}"><img
-		src="../resources/images/Excel.png" width="115" height="35"></a> |
-	<a href="pdf?id=${showOneUomData.uomId}"><img
-		src="../resources/images/Pdf.jpg" width="115" height="35"></a>
+				<table class="table table-bordered table-hover">
+					<tr>
+						<th>Uom ID</th>
+						<td>${showOneUomData.uomId}</td>
+					</tr>
+					<tr>
+						<th>Uom Type</th>
+						<td>${showOneUomData.uomType}</td>
+					</tr>
+					<tr>
+						<th>Uom Model</th>
+						<td>${showOneUomData.uomModel}</td>
+					</tr>
+					<tr>
+						<th>Description</th>
+						<td>${showOneUomData.uomDescription}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	<table border="1">
-		<tr>
-			<th>Uom ID</th>
-			<td>${showOneUomData.uomId}</td>
-		</tr>
-		<tr>
-			<th>Uom Type</th>
-			<td>${showOneUomData.uomType}</td>
-		</tr>
-		<tr>
-			<th>Uom Model</th>
-			<td>${showOneUomData.uomModel}</td>
-		</tr>
-		<tr>
-			<th>Description</th>
-			<td>${showOneUomData.uomDescription}</td>
-		</tr>
-	</table>
 </body>
 </html>

@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import siva.nit.charts.ShipmentTypeCharts;
 import siva.nit.model.ShipmentType;
 import siva.nit.service.ShipmentTypeService;
-import siva.nit.util.ShipmentTypeChartsUtil;
+
 import siva.nit.view.excel.ShipmentTypeExcelView;
 import siva.nit.view.pdf.ShipmentTypePdfView;
 
@@ -28,7 +29,7 @@ public class ShipmentTypeController {
 	@Autowired
 	private ServletContext servletContext;
 	@Autowired
-	private ShipmentTypeChartsUtil shipmentTypeChartsUtil;
+	private ShipmentTypeCharts shipmentTypeCharts;
 
 	// 1.Register Page
 	@RequestMapping("/register")
@@ -62,6 +63,7 @@ public class ShipmentTypeController {
 		shipmentTypeService.delectShipmentType(id);
 		String message = "ShipmentType '" + id + "' is deleted";
 		model.addAttribute("deleteShipmentTypeObjectData", message);
+		
 		// fetch new Data
 		List<ShipmentType> list = shipmentTypeService.getAllShipmentTypes();
 		model.addAttribute("fetchAllShipmentTypesData", list);
@@ -137,8 +139,8 @@ public class ShipmentTypeController {
 	public String showCharts() {
 		List<Object[]> list=shipmentTypeService.getShipmentTypeModeCount();
 		String path=servletContext.getRealPath("/");
-		shipmentTypeChartsUtil.generatePieChart(path, list);
-		shipmentTypeChartsUtil.generateBarChart(path, list);
+		shipmentTypeCharts.generatePieChart(path, list);
+		shipmentTypeCharts.generateBarChart(path, list);
 		return "ShipmentTypeCharts";
 	}
 	

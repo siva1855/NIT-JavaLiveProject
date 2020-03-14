@@ -11,7 +11,7 @@
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
 		<div class="card">
-			<div class="card-header bg-primary text-white text-center">
+			<div class="card-header bg-primary text-white text-center text-uppercase">
 				<h2>Welcome To Part Data Page</h2>
 			</div>
 			<div class="card-body">

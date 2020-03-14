@@ -13,10 +13,10 @@
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
 		<div class="card">
-			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
 				<h2>Welcome to OrderMethod Register Page</h2>
 			</div>
+			
 			<div class="card-body">
 				<form:form action="save" method="POST" modelAttribute="orderMethod">
 					<div class="row">

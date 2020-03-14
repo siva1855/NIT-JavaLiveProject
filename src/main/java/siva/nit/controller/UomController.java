@@ -13,9 +13,10 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
+import siva.nit.charts.UomCharts;
 import siva.nit.model.Uom;
 import siva.nit.service.UomService;
-import siva.nit.util.UomChartsUtil;
+
 import siva.nit.view.excel.UomExcelView;
 import siva.nit.view.pdf.UomPdfView;
 
@@ -28,7 +29,7 @@ public class UomController {
 	@Autowired
 	private ServletContext servletContext;
 	@Autowired
-	private UomChartsUtil uomChartsUtil;
+	private UomCharts uomCharts;
 	
 	
 	// 1.Register Page
@@ -142,8 +143,8 @@ public class UomController {
 		public String showCharts() {
 			List<Object[]> list=uomService.getUomTypeCount();
 			String path=servletContext.getRealPath("/");
-			uomChartsUtil.generatePieChart(path, list);
-			uomChartsUtil.generateBarChart(path, list);
+			uomCharts.generatePieChart(path, list);
+			uomCharts.generateBarChart(path, list);
 			return "UomCharts";
 		}
 }

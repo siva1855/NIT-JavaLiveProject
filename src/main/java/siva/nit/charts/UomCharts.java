@@ -1,4 +1,4 @@
-package siva.nit.util;
+package siva.nit.charts;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,8 +11,9 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
 import org.springframework.stereotype.Component;
 @Component
-public class OrderMethodChartsUtil {
-	  //1.JFree PieCharts
+public class UomCharts {
+	
+	//1.JFree PieCharts
 		public void generatePieChart(String path, List<Object[]> data) {
 			// 1.create dataset
 			DefaultPieDataset defaultPieDataset = new DefaultPieDataset();
@@ -21,11 +22,11 @@ public class OrderMethodChartsUtil {
 				defaultPieDataset.setValue(arrayPieChartObject[0].toString(), Double.valueOf(arrayPieChartObject[1].toString()));
 			}
 			// 2.create JFreeChart using chartFactory
-			JFreeChart jFreeChart = ChartFactory.createPieChart3D("OrderMethod Types", defaultPieDataset, true, true,
+			JFreeChart jFreeChart = ChartFactory.createPieChart3D("Uom Type", defaultPieDataset, true, true,
 					false);
 			//3.save as Image Using ChartUtils
 			try {
-				ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/OrderMethodPieChart.jpg"), jFreeChart, 400, 400);
+				ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/UomPieChart.jpg"), jFreeChart, 400, 400);
 			} catch (IOException e) {
 				
 				e.printStackTrace();
@@ -42,16 +43,15 @@ public class OrderMethodChartsUtil {
 						arrayBarChartObject[0].toString(), "");	
 			}
 			//2.create JFreeChart Using ChartFactory
-			JFreeChart jFreeChart=ChartFactory.createBarChart("OrderMethod Types", "Types", "Count",defaultCategoryDataset);
+			JFreeChart jFreeChart=ChartFactory.createBarChart("Uom Type", "Types", "Count",defaultCategoryDataset);
 			
 			//3.save as Image Using ChartUtil
 			try {
-				ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/OrderMethodBarChart.jpg"), jFreeChart, 400, 400);
+				ChartUtils.saveChartAsJPEG(new File(path+"/resources/images/UomBarChart.jpg"), jFreeChart, 400, 400);
 			} catch (IOException e) {
 				
 				e.printStackTrace();
 			}
 			
 		}
-
 }

@@ -8,8 +8,22 @@
 </head>
 <body>
 	<%@include file="ClientMenu.jsp"%>
-	<h2>Welcome To Uom Chart Page</h2>
-	<img src="../resources/images/UomPieChart.jpg" />
-	<img src="../resources/images/UomBarChart.jpg" />
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
+				<h2>Welcome To Uom Chart Page</h2>
+			</div>
+			<div class="row">
+				<div class="col-2"></div>
+				<div class="col-4" class=" text-center">
+					        <img src="../resources/images/UomPieChart.jpg" />
+				</div>
+				<div class="col-4" class=" text-center">
+					       <img src="../resources/images/UomBarChart.jpg" />
+				</div>
+				<div class="col-2"></div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

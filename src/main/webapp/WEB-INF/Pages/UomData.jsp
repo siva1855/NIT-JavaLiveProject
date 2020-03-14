@@ -10,10 +10,8 @@
 <body>
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
-
 		<div class="card">
-
-			<div class="card-header bg-primary text-white text-center">
+			<div class="card-header bg-primary text-uppercase text-white text-center">
 				<h2>Welcome to Uom Data Page</h2>
 			</div>
 			<div class="card-body">
@@ -45,7 +43,6 @@
 								</tr>
 							</c:forEach>
 						</table>
-
 
 					</c:when>
 					<c:otherwise>

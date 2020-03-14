@@ -1,4 +1,4 @@
-package siva.nit.util;
+package siva.nit.charts;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import org.jfree.data.general.DefaultPieDataset;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ShipmentTypeChartsUtil {
+public class ShipmentTypeCharts {
      //1.JFree PieCharts
 	public void generatePieChart(String path, List<Object[]> data) {
 		// 1.create dataset

@@ -3,17 +3,13 @@ package siva.nit.view.pdf;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.view.document.AbstractPdfView;
-
 import com.lowagie.text.Document;
 import com.lowagie.text.Paragraph;
 import com.lowagie.text.pdf.PdfPTable;
 import com.lowagie.text.pdf.PdfWriter;
-
 import siva.nit.model.ShipmentType;
 
 public class ShipmentTypePdfView extends AbstractPdfView {

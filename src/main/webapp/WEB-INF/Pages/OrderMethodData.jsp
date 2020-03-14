@@ -59,16 +59,16 @@
 				</c:choose>
 				${deleteOrderMethodObjectData} ${updateOrderMethodObjectData}
 
-				<%-- <c:if test="${!empty message }">
+				<%-- <c:if test="${!empty updateOrderMethodObjectData }">
 					<c:choose>
 						<c:when test="${opr eq 'DEL'}">
 							<div class="card-footer bg-danger text-white text-center">
-								<b>${message }</b>
+								<b>${deleteOrderMethodObjectData }</b>
 							</div>
 						</c:when>
 						<c:otherwise>
 							<div class="card-footer bg-info text-white text-center">
-								<b>${message }</b>
+								<b>${updateOrderMethodObjectData }</b>
 							</div>
 
 						</c:otherwise>

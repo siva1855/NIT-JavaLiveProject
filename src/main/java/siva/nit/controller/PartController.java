@@ -79,6 +79,7 @@ public class PartController {
 	public String showPartEditPage(@RequestParam("pid") Integer id, Model model) {
 		Part partObj = partService.getOnePart(id);
 		model.addAttribute("part", partObj);
+		CommonUI(model);
 		return "PartEdit";
 	}
 
@@ -90,6 +91,7 @@ public class PartController {
 		model.addAttribute("updatePartObjectData", message);
 		List<Part> list = partService.getAllParts();
 		model.addAttribute("fetchAllPartsData", list);
+		CommonUI(model);
 		return "PartData";
 	}
 

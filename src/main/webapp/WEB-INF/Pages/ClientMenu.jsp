@@ -28,6 +28,18 @@
 					<span class="sr-only">(current)</span>
 			</a></li>
 
+			<!-- Documents option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> DOCUMENTS </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/documents/show">SHOW</a>
+					<div class="dropdown-divider"></div>
+				</div></li>
+			<!-- Documents option end -->
+
+
 			<!-- ShipmentType option start-->
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"

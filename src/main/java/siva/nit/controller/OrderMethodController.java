@@ -16,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import siva.nit.charts.OrderMethodCharts;
 import siva.nit.model.OrderMethod;
 
 import siva.nit.service.OrderMethodService;
-import siva.nit.util.OrderMethodChartsUtil;
+
 import siva.nit.view.excel.OrderMethodExcelView;
 import siva.nit.view.pdf.OrderMethodPdfView;
 
@@ -31,7 +32,7 @@ public class OrderMethodController {
 	@Autowired
 	private ServletContext servletContext;
 	@Autowired
-	private OrderMethodChartsUtil orderMethodChartsUtil;
+	private OrderMethodCharts orderMethodCharts;
 	
 	
 	// 1.Register Page
@@ -65,6 +66,9 @@ public class OrderMethodController {
 			String message = "OrderMethod '" + id + "' is deleted";
 			model.addAttribute("deleteOrderMethodObjectData", message);
 			// fetch new Data
+			/*
+			 * String opr="DEL"; model.addAttribute("opr",opr);
+			 */
 			List<OrderMethod> list = orderMethodService.getAllOrderMethods();
 			model.addAttribute("fetchAllOrderMethodsData", list);
 			return "OrderMethodData";
@@ -139,8 +143,8 @@ public class OrderMethodController {
 		public String showCharts() {
 			List<Object[]> list=orderMethodService.getOrderMethodTypeCount();
 			String path=servletContext.getRealPath("/");
-			orderMethodChartsUtil.generatePieChart(path, list);
-			orderMethodChartsUtil.generateBarChart(path, list);
+			orderMethodCharts.generatePieChart(path, list);
+			orderMethodCharts.generateBarChart(path, list);
 			return "OrderMethodCharts";
 		}
 		
