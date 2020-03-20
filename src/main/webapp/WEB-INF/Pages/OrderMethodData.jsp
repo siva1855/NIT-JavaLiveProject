@@ -57,27 +57,28 @@
 						<h2>No Data Found!!!</h2>
 					</c:otherwise>
 				</c:choose>
-				${deleteOrderMethodObjectData} ${updateOrderMethodObjectData}
+				<%-- ${deleteOrderMethodObjectData} ${updateOrderMethodObjectData} --%>
 
-				<%-- <c:if test="${!empty updateOrderMethodObjectData }">
-					<c:choose>
-						<c:when test="${opr eq 'DEL'}">
-							<div class="card-footer bg-danger text-white text-center">
-								<b>${deleteOrderMethodObjectData }</b>
-							</div>
-						</c:when>
-						<c:otherwise>
-							<div class="card-footer bg-info text-white text-center">
-								<b>${updateOrderMethodObjectData }</b>
-							</div>
 
-						</c:otherwise>
-					</c:choose>
-				</c:if> --%>
 
 			</div>
+			<!-- card body end -->
+			<c:if test="${!empty deleteOrderMethodObjectData }">
+				<div class="card-footer bg-info text-danger text-center">
+					<b>${deleteOrderMethodObjectData}</b>
+				</div>
+			</c:if>
+
+			<c:if test="${!empty updateOrderMethodObjectData }">
+				<div class="card-footer bg-info text-white text-center">
+					<b>${updateOrderMethodObjectData}</b>
+				</div>
+			</c:if>
+
 		</div>
+		<!--  card end -->
 	</div>
+	<!-- container end -->
 
 </body>
 </html>

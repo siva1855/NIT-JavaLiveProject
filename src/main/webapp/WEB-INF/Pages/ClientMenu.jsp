@@ -94,6 +94,18 @@
 				</div></li>
 			<!-- ShipmentType option end -->
 
+			<!-- WhUserType option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> WHUSERTYPE </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/whusertype/register">REGISTER</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/whusertype/all">ALL</a>
+				</div></li>
+			<!-- WhUserType option end -->
+
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"

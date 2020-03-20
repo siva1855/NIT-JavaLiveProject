@@ -18,7 +18,6 @@
 			<div class="card-body">
 				<a href="excel" class="btn btn-secondary">EXCEL EXPORT</a> <a
 					href="pdf" class="btn btn-secondary">PDF EXPORT</a>
-
 				<c:choose>
 					<c:when test="${!empty fetchAllShipmentTypesData }">
 						<table class="table table-hover">
@@ -49,31 +48,24 @@
 								</tr>
 							</c:forEach>
 						</table>
-
 					</c:when>
 					<c:otherwise>
 						<h2>No Data Found!!!</h2>
 					</c:otherwise>
 				</c:choose>
-
-				${deleteShipmentTypeObjectData} ${updateShipmentTypeObjectData}
-
-
 			</div>
 			<!-- card body -->
-			
-			<%-- <c:if test="${!empty message }">
-				<c:choose>
-					<c:when test="${opr eq 'DEL'}">
-						<div class="card-footer bg-danger text-white text-center"><b>${message }</b></div>
-					</c:when>
-					<c:otherwise>
-						<div class="card-footer bg-info text-white text-center"><b>${message }</b></div>
-					
-					</c:otherwise>
-				</c:choose>
-			</c:if> --%>
+			<c:if test="${!empty deleteShipmentTypeObjectData }">
+				<div class="card-footer bg-info text-danger text-center">
+					<b>${deleteShipmentTypeObjectData}</b>
+				</div>
+			</c:if>
 
+			<c:if test="${!empty updateShipmentTypeObjectData }">
+				<div class="card-footer bg-info text-white text-center">
+					<b>${updateShipmentTypeObjectData}</b>
+				</div>
+			</c:if>
 
 		</div>
 		<!-- card end -->

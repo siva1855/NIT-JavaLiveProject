@@ -11,7 +11,8 @@
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
 		<div class="card">
-			<div class="card-header bg-primary text-white text-center text-uppercase">
+			<div
+				class="card-header bg-primary text-white text-center text-uppercase">
 				<h2>Welcome To Part Data Page</h2>
 			</div>
 			<div class="card-body">
@@ -51,8 +52,7 @@
 									<!-- URL-ReWritting -->
 									<td><a href="delete?pid=${ob.partId }"
 										class="btn btn-danger">DELETE</a></td>
-									<td><a href="edit?pid=${ob.partId }"
-										class="btn btn-info">EDIT</a></td>
+									<td><a href="edit?pid=${ob.partId }" class="btn btn-info">EDIT</a></td>
 									<td><a href="view?pid=${ob.partId }"
 										class="btn btn-warning">VIEW</a></td>
 								</tr>
@@ -64,14 +64,27 @@
 						<h2>No Data Found!!!</h2>
 					</c:otherwise>
 				</c:choose>
-				
-				${deletePartObjectData} ${updatePartObjectData}
-				
+
+				<%-- ${deletePartObjectData} ${updatePartObjectData} --%>
+
 			</div>
 			<!-- card body -->
+			
+			<c:if test="${!empty deletePartObjectData }">
+				<div class="card-footer bg-info text-danger text-center">
+					<b>${deletePartObjectData}</b>
+				</div>
+			</c:if>
 
-		</div><!-- card end -->
-		
+			<c:if test="${!empty updatePartObjectData }">
+				<div class="card-footer bg-info text-white text-center">
+					<b>${updatePartObjectData}</b>
+				</div>
+			</c:if>
+			
+		</div>
+		<!-- card end -->
+
 	</div>
 	<!-- container end -->
 </body>

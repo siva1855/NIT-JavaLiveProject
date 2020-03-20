@@ -11,7 +11,8 @@
 	<%@include file="ClientMenu.jsp"%>
 	<div class="container">
 		<div class="card">
-			<div class="card-header bg-primary text-uppercase text-white text-center">
+			<div
+				class="card-header bg-primary text-uppercase text-white text-center">
 				<h2>Welcome to Uom Data Page</h2>
 			</div>
 			<div class="card-body">
@@ -49,10 +50,25 @@
 						<h2>No Data Found!!!!</h2>
 					</c:otherwise>
 				</c:choose>
-				${deleteOneUomData} ${updateUomObjectData}
-			</div>
-		</div>
-	</div>
 
+			</div>
+			<!-- card body end -->
+
+			<c:if test="${!empty deleteOneUomData }">
+				<div class="card-footer bg-info text-danger text-center">
+					<b>${deleteOneUomData}</b>
+				</div>
+			</c:if>
+
+			<c:if test="${!empty updateUomObjectData }">
+				<div class="card-footer bg-info text-white text-center">
+					<b>${updateUomObjectData}</b>
+				</div>
+			</c:if>
+
+		</div>
+		<!-- card end -->
+	</div>
+	<!--  container end -->
 </body>
 </html>
