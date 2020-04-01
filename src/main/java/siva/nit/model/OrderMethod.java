@@ -15,6 +15,19 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name="ordermethod_table")
 public class OrderMethod {
@@ -23,6 +36,7 @@ public class OrderMethod {
 	@GeneratedValue(generator ="ordermethodidgenerator")
 	@GenericGenerator(name="ordermethodidgenerator",strategy = "increment")
 	@Column(name="ordermethod_id")
+	@NonNull
 	private Integer orderMethodId;
 	
 	
@@ -43,72 +57,5 @@ public class OrderMethod {
 	private String orderMethodDescription;
 
 
-	public OrderMethod() {
-		super();
-	}
-
 	
-	public OrderMethod(Integer orderMethodId) {
-		super();
-		this.orderMethodId = orderMethodId;
-	}
-
-
-	public Integer getOrderMethodId() {
-		return orderMethodId;
-	}
-
-	public void setOrderMethodId(Integer orderMethodId) {
-		this.orderMethodId = orderMethodId;
-	}
-
-	public String getOrderMethodMode() {
-		return orderMethodMode;
-	}
-
-	public void setOrderMethodMode(String orderMethodMode) {
-		this.orderMethodMode = orderMethodMode;
-	}
-
-	public String getOrderMethodCode() {
-		return orderMethodCode;
-	}
-
-	public void setOrderMethodCode(String orderMethodCode) {
-		this.orderMethodCode = orderMethodCode;
-	}
-
-	public String getOrderMethodType() {
-		return orderMethodType;
-	}
-
-	public void setOrderMethodType(String orderMethodType) {
-		this.orderMethodType = orderMethodType;
-	}
-
-	public List<String> getOrderMethodAccept() {
-		return orderMethodAccept;
-	}
-
-	public void setOrderMethodAccept(List<String> orderMethodAccept) {
-		this.orderMethodAccept = orderMethodAccept;
-	}
-
-	public String getOrderMethodDescription() {
-		return orderMethodDescription;
-	}
-
-	public void setOrderMethodDescription(String orderMethodDescription) {
-		this.orderMethodDescription = orderMethodDescription;
-	}
-
-	
-	
-	@Override
-	public String toString() {
-		return "OrderMethod [orderMethodId=" + orderMethodId + ", orderMethodMode=" + orderMethodMode
-				+ ", orderMethodCode=" + orderMethodCode + ", orderMethodType=" + orderMethodType
-				+ ", orderMethodAccept=" + orderMethodAccept + ", orderMethodDescription=" + orderMethodDescription
-				+ "]";
-	}
 }

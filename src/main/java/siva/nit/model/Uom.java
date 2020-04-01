@@ -6,12 +6,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "uom_table")
 public class Uom {
 	@Id
 	@GeneratedValue
 	@Column(name = "uom_id")
+	@NonNull
 	private Integer uomId;
 
 	@Column(name = "uom_type")
@@ -20,43 +34,7 @@ public class Uom {
 	private String uomModel;
 	@Column(name = "uom_description")
 	private String uomDescription;
-	public Uom() {
-		super();
-	}
-	public Uom(Integer uomId) {
-		super();
-		this.uomId = uomId;
-	}
-	public Integer getUomId() {
-		return uomId;
-	}
-	public void setUomId(Integer uomId) {
-		this.uomId = uomId;
-	}
-	public String getUomType() {
-		return uomType;
-	}
-	public void setUomType(String uomType) {
-		this.uomType = uomType;
-	}
-	public String getUomModel() {
-		return uomModel;
-	}
-	public void setUomModel(String uomModel) {
-		this.uomModel = uomModel;
-	}
-	public String getUomDescription() {
-		return uomDescription;
-	}
-	public void setUomDescription(String uomDescription) {
-		this.uomDescription = uomDescription;
-	}
-	@Override
-	public String toString() {
-		return "Uom [uomId=" + uomId + ", uomType=" + uomType + ", uomModel=" + uomModel + ", uomDescription="
-				+ uomDescription + "]";
-	}
-
+	
 	
 
 }

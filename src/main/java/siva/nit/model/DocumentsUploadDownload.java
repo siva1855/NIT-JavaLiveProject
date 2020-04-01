@@ -1,12 +1,22 @@
 package siva.nit.model;
 
-import java.util.Arrays;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 
 @Entity
 @Table(name = "documentsuploaddownload_table")
@@ -23,39 +33,5 @@ public class DocumentsUploadDownload {
 	@Lob
 	@Column(name = "file_data")
 	private byte[] fileData;
-
-	public DocumentsUploadDownload() {
-		super();
-	}
-
-	public Integer getFileId() {
-		return fileId;
-	}
-
-	public void setFileId(Integer fileId) {
-		this.fileId = fileId;
-	}
-
-	public String getFileName() {
-		return fileName;
-	}
-
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-
-	public byte[] getFileData() {
-		return fileData;
-	}
-
-	public void setFileData(byte[] fileData) {
-		this.fileData = fileData;
-	}
-
-	@Override
-	public String toString() {
-		return "DocumentsUpload [fileId=" + fileId + ", fileName=" + fileName + ", fileData="
-				+ Arrays.toString(fileData) + "]";
-	}
 
 }

@@ -8,6 +8,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
+@ToString
 
 @Entity
 @Table(name = "part_table")
@@ -15,6 +28,7 @@ public class Part {
 	@Id
 	@GeneratedValue
 	@Column(name = "part_id")
+	@NonNull
 	private Integer partId;
 
 	@Column(name = "part_code")
@@ -50,110 +64,5 @@ public class Part {
 	@Column(name = "part_description")
 	private String partDescription;
 
-	public Part() {
-		super();
-	}
-
-	public Part(Integer partId) {
-		super();
-		this.partId = partId;
-	}
-
-	public Integer getPartId() {
-		return partId;
-	}
-
-	public void setPartId(Integer partId) {
-		this.partId = partId;
-	}
-
-	public String getPartCode() {
-		return partCode;
-	}
-
-	public void setPartCode(String partCode) {
-		this.partCode = partCode;
-	}
-
-	public Double getPartDimensionLength() {
-		return partDimensionLength;
-	}
-
-	public void setPartDimensionLength(Double partDimensionLength) {
-		this.partDimensionLength = partDimensionLength;
-	}
-
-	public Double getPartDimensionWidth() {
-		return partDimensionWidth;
-	}
-
-	public void setPartDimensionWidth(Double partDimensionWidth) {
-		this.partDimensionWidth = partDimensionWidth;
-	}
-
-	public Double getPartDimensionHeight() {
-		return partDimensionHeight;
-	}
-
-	public void setPartDimensionHeight(Double partDimensionHeight) {
-		this.partDimensionHeight = partDimensionHeight;
-	}
-
-	public Double getPartBaseCost() {
-		return partBaseCost;
-	}
-
-	public void setPartBaseCost(Double partBaseCost) {
-		this.partBaseCost = partBaseCost;
-	}
-
-	public String getPartBaseCurrency() {
-		return partBaseCurrency;
-	}
-
-	public void setPartBaseCurrency(String partBaseCurrency) {
-		this.partBaseCurrency = partBaseCurrency;
-	}
-
-	public Uom getUomObj() {
-		return uomObj;
-	}
-
-	public void setUomObj(Uom uomObj) {
-		this.uomObj = uomObj;
-	}
-
-	public OrderMethod getOrderMethodSaleObj() {
-		return orderMethodSaleObj;
-	}
-
-	public void setOrderMethodSaleObj(OrderMethod orderMethodSaleObj) {
-		this.orderMethodSaleObj = orderMethodSaleObj;
-	}
-
-	public OrderMethod getOrderMethodPurchaseObj() {
-		return orderMethodPurchaseObj;
-	}
-
-	public void setOrderMethodPurchaseObj(OrderMethod orderMethodPurchaseObj) {
-		this.orderMethodPurchaseObj = orderMethodPurchaseObj;
-	}
-
-	public String getPartDescription() {
-		return partDescription;
-	}
-
-	public void setPartDescription(String partDescription) {
-		this.partDescription = partDescription;
-	}
-
-	@Override
-	public String toString() {
-		return "Part [partId=" + partId + ", partCode=" + partCode + ", partDimensionLength=" + partDimensionLength
-				+ ", partDimensionWidth=" + partDimensionWidth + ", partDimensionHeight=" + partDimensionHeight
-				+ ", partBaseCost=" + partBaseCost + ", partBaseCurrency=" + partBaseCurrency + ", uomObj=" + uomObj
-				+ ", orderMethodSaleObj=" + orderMethodSaleObj + ", orderMethodPurchaseObj=" + orderMethodPurchaseObj
-				+ ", partDescription=" + partDescription + "]";
-	}
-
+	
 }

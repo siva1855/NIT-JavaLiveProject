@@ -6,12 +6,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Entity
 @Table(name = "whusertype_table")
 public class WhUserType {
 	@Id
 	@GeneratedValue
 	@Column(name = "whusertype_id")
+	@NonNull
 	private Integer whUserTypeId;
 
 	@Column(name = "whusertype_type")
@@ -38,88 +52,5 @@ public class WhUserType {
 	@Column(name = "whusertype_id_number")
 	private Integer whUserTypeIdNumber;
 
-	public WhUserType() {
-		super();
-	}
-
-	public Integer getWhUserTypeId() {
-		return whUserTypeId;
-	}
-
-	public void setWhUserTypeId(Integer whUserTypeId) {
-		this.whUserTypeId = whUserTypeId;
-	}
-
-	public String getWhUserType() {
-		return whUserType;
-	}
-
-	public void setWhUserType(String whUserType) {
-		this.whUserType = whUserType;
-	}
-
-	public String getWhUserTypeCode() {
-		return whUserTypeCode;
-	}
-
-	public void setWhUserTypeCode(String whUserTypeCode) {
-		this.whUserTypeCode = whUserTypeCode;
-	}
-
-	public String getWhUserTypeFor() {
-		return whUserTypeFor;
-	}
-
-	public void setWhUserTypeFor(String whUserTypeFor) {
-		this.whUserTypeFor = whUserTypeFor;
-	}
-
-	public String getWhUserTypeMail() {
-		return whUserTypeMail;
-	}
-
-	public void setWhUserTypeMail(String whUserTypeMail) {
-		this.whUserTypeMail = whUserTypeMail;
-	}
-
-	public Long getWhUserTypeContact() {
-		return whUserTypeContact;
-	}
-
-	public void setWhUserTypeContact(Long whUserTypeContact) {
-		this.whUserTypeContact = whUserTypeContact;
-	}
-
-	public String getWhUserTypeIdType() {
-		return whUserTypeIdType;
-	}
-
-	public void setWhUserTypeIdType(String whUserTypeIdType) {
-		this.whUserTypeIdType = whUserTypeIdType;
-	}
-
-	public String getWhUserTypeIfOther() {
-		return whUserTypeIfOther;
-	}
-
-	public void setWhUserTypeIfOther(String whUserTypeIfOther) {
-		this.whUserTypeIfOther = whUserTypeIfOther;
-	}
-
-	public Integer getWhUserTypeIdNumber() {
-		return whUserTypeIdNumber;
-	}
-
-	public void setWhUserTypeIdNumber(Integer whUserTypeIdNumber) {
-		this.whUserTypeIdNumber = whUserTypeIdNumber;
-	}
-
-	@Override
-	public String toString() {
-		return "WhUserType [whUserTypeId=" + whUserTypeId + ", whUserType=" + whUserType + ", whUserTypeCode="
-				+ whUserTypeCode + ", whUserTypeFor=" + whUserTypeFor + ", whUserTypeMail=" + whUserTypeMail
-				+ ", whUserTypeContact=" + whUserTypeContact + ", whUserTypeIdType=" + whUserTypeIdType
-				+ ", whUserTypeIfOther=" + whUserTypeIfOther + ", whUserTypeIdNumber=" + whUserTypeIdNumber + "]";
-	}
-
+	
 }
